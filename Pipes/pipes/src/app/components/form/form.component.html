@@ -1,0 +1,14 @@
+<div class="row mt-3">
+  <div class="col-md-6">
+    <div class="form-group">
+      <label>{{title}}</label>
+      <input class="form-control" [type]="type" (input)="onValueChange($any($event.target).value)">
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <label><b>{{title}}</b></label>
+  <div>{{formatedValue}}</div>
+  </div>
+</div>
+

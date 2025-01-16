@@ -1,0 +1,9 @@
+<div class="container">
+
+  <h3>Fatura</h3>
+  <app-form title="İsim" type="text" [pipe]="titleCasePipe"></app-form>
+  <app-form title="Ödeme Tarihi" type="date" [pipe]="datePipe"></app-form>
+  <app-form title="Tutar" type="text" [pipe]="currencyPipe"></app-form>
+  <h3 class="mt-5">Mil - Kilometre Dönüşüm</h3>
+  <app-convert title="Mil" toTitle="Kilometre" type="text" [pipe]="convertPipe"></app-convert>
+</div>
