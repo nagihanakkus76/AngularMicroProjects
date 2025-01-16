@@ -1,0 +1,23 @@
+<div class="mainArea">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="box column is-one-third">
+        <h1 class="title has-text-centered">Harf Eşleştirme</h1>
+
+        <p class="has-text-centered">
+          @for (letter of randomText.split(''); track $index) {
+          <span [class]="compare(letter,enteredText[$index])">{{letter}}</span>
+          }
+
+        <div class="field">
+          <input class="input" (input)="getInputValue($any($event.target).value)">
+        </div>
+        @if (randomText === enteredText) {
+        <div>
+          <h1 class="title">Bravo!</h1>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
