@@ -1,0 +1,28 @@
+<div class="container">
+  <nav>
+    <ul class="pagination paginationUl">
+
+      <li class="page-item" [ngClass]="{disabled:currentPage === 0}">
+        <a class="page-link hand" (click)="currentPage = currentPage - 1">Önceki</a>
+      </li>
+
+      @for (image of images; track $index) {
+      @if ( pageIndex($index) ) {
+      <li class="page-item" [ngClass]="{active: $index === currentPage}" (click)="currentPage = $index">
+        <a class="page-link" href="#">{{$index + 1}}</a>
+      </li>}}
+
+      <li class="page-item" [ngClass]="{disabled:currentPage === images.length - 1}">
+        <a class="page-link hand" (click)="currentPage = currentPage + 1">Sonraki</a>
+      </li>
+
+    </ul>
+  </nav>
+
+
+  <div class="mainImg">
+    <h4 appPage [color]="'white'" >{{images[currentPage].title}}</h4>
+    <img class="Img" [src]="images[currentPage].url">
+  </div>
+</div>
+<!--[ngClass]="$index === currentPage ? 'active' : 'passive'"-->

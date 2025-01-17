@@ -1,0 +1,28 @@
+.hand {
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.paginationUl {
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.mainImg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.colorh4{
+  color: white;
+}
+
+.Img{
+  max-height: 500px;
+  min-height:500px ;
+}
