@@ -1,0 +1,5 @@
+<app-divider [title]="title"></app-divider>
+<button (click)="onClick()">Kullanıcı Onayı</button>
+@if (modalOpen) {
+<app-modal (close)="onClick()"></app-modal>
+}

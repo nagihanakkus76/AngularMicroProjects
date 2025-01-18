@@ -1,0 +1,20 @@
+<table class="ui striped celled table">
+  <thead>
+    <tr>
+      <th>Aldığı ücretten memnun mu?</th>
+      <th>Ad Soyad</th>
+      <th>Yaş</th>
+      <th>Meslek</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (data of datas; track $index) {
+    <tr>
+      <td data-label="Job">{{datas[$index].isPleased}}</td>
+      <td data-label="Name">{{datas[$index].name}} {{datas[$index].surname}}</td>
+      <td data-label="Age">{{datas[$index].age}}</td>
+      <td data-label="Job">{{datas[$index].job}}</td>
+    </tr>
+    }
+  </tbody>
+</table>

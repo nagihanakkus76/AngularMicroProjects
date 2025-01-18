@@ -1,0 +1,12 @@
+<app-divider [title]="title"></app-divider>
+
+<app-survey-table></app-survey-table>
+
+
+<app-divider [title]="title2"></app-divider>
+
+<app-tabs>
+  <a routerLinkActive="active" routerLink="./" [routerLinkActiveOptions]="{exact:true}" class="item">Sertifikalar</a>
+  <a routerLinkActive="active" routerLink="./companies" class="item">Yabancı Dil Bilgisi</a>
+  <a routerLinkActive="active" routerLink="./partners" class="item">Mezun Olunan Okul</a>
+</app-tabs>
