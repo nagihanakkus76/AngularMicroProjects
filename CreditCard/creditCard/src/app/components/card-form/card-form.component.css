@@ -1,0 +1,13 @@
+.custom {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.img {
+  margin-right: 30px;
+}
