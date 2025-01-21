@@ -1,0 +1,25 @@
+import { of, Observable } from 'rxjs';
+
+// const adlar$ = new Observable<string>((subscriber) => {
+//   subscriber.next('Can');
+//   subscriber.next('Osman');
+//   subscriber.next('Hakan');
+//   subscriber.complete();
+// });
+
+// adlar$.subscribe({
+//   next: (value) => console.log(value),
+//   complete: () => console.log('Completed'),
+// });
+
+// of observable a ('Can', 'Osman', 'Hakan') değerleri de next metoduna karşılık geliyor ve her bir değeri observable a ekliyor.
+// of('Can', 'Osman', 'Hakan').subscribe({
+//   next: (value) => console.log(value),
+//   complete: () => console.log('Completed'),
+// });
+
+// of observable a (10, 20, 30) değerleri de next metoduna karşılık geliyor ve her bir değeri observable a ekliyor.
+of(10, 20, 30).subscribe({
+  next: (value) => console.log(value),
+  complete: () => console.log('Completed'),
+});

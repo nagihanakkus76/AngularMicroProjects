@@ -1,0 +1,18 @@
+import { from } from 'rxjs';
+import { filter } from 'rxjs/operators';
+
+// const source = from([1, 2, 3, 4, 5]);
+
+// const example = source.pipe(filter((num) => num % 2 === 1));
+// example.subscribe((val) => console.log(`Tek sayılar: ${val}`));
+
+const source = from([
+  { name: 'Can', age: 29 },
+  { name: 'Tuba', age: 27 },
+]);
+
+const example = source.pipe(filter((person) => person.age >= 28));
+
+example.subscribe((person) =>
+  console.log(`28 yaşından büyük olanlar: ${person.name}`)
+);

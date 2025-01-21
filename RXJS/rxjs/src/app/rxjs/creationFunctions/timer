@@ -1,0 +1,13 @@
+import { timer } from 'rxjs';
+//Belirli bir saniye sonra observable a girmeyi sağlar.
+console.log('Uygulama Başladı');
+
+const subscription = timer(2000).subscribe({
+  next: (value) => console.log(value),
+  complete: () => console.log('Completed'),
+});
+
+setTimeout(() => {
+  subscription.unsubscribe();
+  console.log('Unsubscribe');
+}, 3000);

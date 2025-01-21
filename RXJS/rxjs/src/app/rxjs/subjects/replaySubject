@@ -1,0 +1,11 @@
+import { ReplaySubject } from 'rxjs';
+
+const sub = new ReplaySubject(3);
+
+sub.next(1);
+sub.next(2);
+sub.subscribe(console.log);
+sub.next(3);
+sub.next(4);
+sub.subscribe(console.log);
+sub.next(5);

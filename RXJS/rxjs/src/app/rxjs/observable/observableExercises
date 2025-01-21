@@ -1,0 +1,19 @@
+import { Observable } from 'rxjs';
+//Exercise 1
+const observable$ = new Observable<string>((subscriber) => {
+  console.log('Observable çalıştı');
+});
+
+console.log('Subsrice olmadan Önce');
+observable$.subscribe();
+console.log('Subsrice olduktan sonra');
+
+//Exercise 2
+const observable2$ = new Observable<string>((subscriber) => {
+  console.log('Observable çalıştı');
+  subscriber.next('Can');
+});
+
+console.log('Subscribe olmadan Önce');
+observable2$.subscribe((value) => console.log(value));
+console.log('Subscribe olduktan sonra');

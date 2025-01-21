@@ -1,0 +1,5 @@
+import { of, concat, interval } from 'rxjs';
+
+concat(interval(1000), of('This', 'Never', 'Runs')).subscribe(console.log);
+
+// concat(of(1, 2, 3), of(4, 5, 6), of(7, 8, 9)).subscribe(console.log);

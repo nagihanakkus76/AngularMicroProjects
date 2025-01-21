@@ -1,0 +1,26 @@
+import { Observable } from 'rxjs';
+
+const observable$ = new Observable<string>((subscriber) => {
+  console.log('Observable çalıştı');
+  subscriber.next('Can');
+  subscriber.next('Hakan');
+  setTimeout(() => {
+    subscriber.next('Osman');
+  }, 2000);
+
+  setTimeout(() => {
+    subscriber.error(new Error('Hata Aldık'));
+  }, 4000);
+
+  return () => {
+    console.log('Teardown');
+  };
+});
+
+console.log('Subscribe olmadan Önce');
+observable$.subscribe({
+  next: (value) => console.log(value),
+  error: (can) => console.log(can.message),
+  complete: () => console.log('Completed'),
+});
+console.log('Subscribe olduktan sonra');

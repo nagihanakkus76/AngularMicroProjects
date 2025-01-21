@@ -1,0 +1,27 @@
+// ***Örnek1
+// import { fromEvent } from 'rxjs';
+// import { debounceTime, map } from 'rxjs/operators';
+
+// const searchBox = document.getElementById('search');
+
+// const keyup$ = fromEvent(searchBox, 'keyup');
+
+// keyup$
+//   .pipe(
+//     map((i: any) => i.currentTarget.value),
+//     debounceTime(2000)   // yeni oluşacak olan observable a belli bir süre sonra atama yapar.
+//   )
+//   .subscribe(console.log);
+
+// ***Örnek2
+// import { fromEvent } from 'rxjs';
+// import { debounceTime, map } from 'rxjs/operators';
+
+// const sliderInput = document.querySelector('input#slider');
+
+// fromEvent(sliderInput, 'input')
+//   .pipe(
+//     map((event) => event.target['value']),
+//     debounceTime(2000)
+//   )
+//   .subscribe((value) => console.log(value));

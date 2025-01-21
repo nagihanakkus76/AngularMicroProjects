@@ -1,0 +1,12 @@
+import { Observable } from 'rxjs';
+
+const observable$ = new Observable<string>((subscriber) => {
+  console.log('Observable çalıştı');
+  subscriber.next('Can');
+  subscriber.next('Hakan');
+  setTimeout(() => subscriber.next('Osman'), 2000);
+});
+
+console.log('Subscribe olmadan Önce');
+observable$.subscribe((value) => console.log(value));
+console.log('Subscribe olduktan sonra');

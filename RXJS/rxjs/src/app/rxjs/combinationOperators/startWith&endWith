@@ -1,0 +1,12 @@
+import { startWith, endWith } from 'rxjs/operators';
+import { of } from 'rxjs';
+
+// const source = of(1, 2, 3);
+
+// const example = source.pipe(endWith(4));
+
+// const subscribe = example.subscribe((val) => console.log(val));
+
+const source$ = of('Can', 'Tuba', 'Osman');
+
+source$.pipe(startWith('İlayda')).subscribe((val) => console.log(val));
