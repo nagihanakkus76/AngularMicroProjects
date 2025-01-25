@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    @for (post of posts; track $index) {
+    <div class="col-md-4">
+      <app-card [titleChild]="post.title" [imageUrlChild]="post.imageUrl" [usernameChild]="post.username"
+        [contentChild]="post.content"></app-card>
+    </div>
+    }
+  </div>
+</div>
