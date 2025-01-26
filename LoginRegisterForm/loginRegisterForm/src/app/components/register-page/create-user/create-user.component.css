@@ -1,0 +1,13 @@
+.mainContainer {
+  height: 80vh;
+}
+
+mat-card {
+  min-width: 40%;
+  min-height: 30%;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}

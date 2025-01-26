@@ -1,0 +1,100 @@
+<div class="d-flex justify-content-center align-items-center  mainContainer">
+  <mat-card class="p-4">
+    <mat-card-title class="mb-4">Kayıt Ol</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="createUserForm" class="d-flex flex-column">
+        <!-- firstName -->
+        <mat-form-field>
+          <mat-label>Ad</mat-label>
+          <input matInput placeholder="Adınızı Giriniz" formControlName="firstName">
+          @if (createUserForm.get('firstName')?.hasError('required')) {
+          <mat-error>
+            Ad zorunludur
+          </mat-error>
+          }
+        </mat-form-field>
+
+        <!-- lastName -->
+        <mat-form-field>
+          <mat-label>Soyad</mat-label>
+          <input matInput placeholder="Soyadınızı Giriniz" formControlName="lastName">
+          @if (createUserForm.get('lastName')?.hasError('required')) {
+          <mat-error>
+            Soyad zorunludur
+          </mat-error>
+          }
+        </mat-form-field>
+
+        <!-- email -->
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Emailinizi Giriniz" formControlName="email">
+          @if (createUserForm.get('email')?.hasError('required')) {
+          <mat-error>
+            Email zorunludur
+          </mat-error>
+          }
+          @if (createUserForm.get('email')?.hasError('email')) {
+          <mat-error>
+            Lütfen doğru formatta email giriniz
+          </mat-error>
+          }
+        </mat-form-field>
+        <!-- password -->
+        <mat-form-field>
+          <mat-label>Şifre</mat-label>
+          <input matInput type="password" placeholder="Şifrenizi Giriniz" formControlName="password">
+          @if (createUserForm.get('password')?.hasError('required')) {
+          <mat-error>
+            Şifre zorunludur
+          </mat-error>
+          }
+
+          @if (createUserForm.get('password')?.hasError('minlength')) {
+          <mat-error>
+            Şifre en az 8 karakter içermelidir
+          </mat-error>
+          }
+        </mat-form-field>
+
+        <!-- repassword -->
+        <mat-form-field>
+          <mat-label>Tekrar Şifre</mat-label>
+          <input matInput type="password" placeholder="Şifrenizi Tekrar Giriniz" formControlName="repassword">
+          @if (createUserForm.get('repassword')?.hasError('required')) {
+          <mat-error>
+            Şifre zorunludur
+          </mat-error>
+          }
+
+          @if (createUserForm.get('repassword')?.hasError('minlength')) {
+          <mat-error>
+            Şifre en az 8 karakter içermelidir
+          </mat-error>
+          }
+          @if (createUserForm.get('repassword')?.hasError('not_the_same')) {
+          <mat-error>
+            Şifre Tekrarı Şifre ile aynı olmalı
+          </mat-error>
+          }
+        </mat-form-field>
+
+        <!-- address -->
+        <mat-form-field>
+          <mat-label>Adres</mat-label>
+          <textarea matInput placeholder="Adres Giriniz" formControlName="address"></textarea>
+          @if (createUserForm.get('address')?.hasError('required')) {
+          <mat-error>
+            Adres zorunludur
+          </mat-error>
+          }
+        </mat-form-field>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <a routerLink="/login">Giriş Yap</a>
+          <button [disabled]="createUserForm.invalid" mat-raised-button color="primary">Kayıt Ol</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
