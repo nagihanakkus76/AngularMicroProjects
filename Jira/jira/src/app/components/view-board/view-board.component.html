@@ -1,0 +1,27 @@
+<div class="main">
+  <button mat-raised-button color="accent" (click)="openNewCardDialog()">Yeni Kart Ekle</button>
+</div>
+
+
+@for (card of boardService.boards[boardIndex].cards; track $index) {
+<div class="cardDiv">
+  <mat-card appearance="outlined" class="card">
+    <mat-card-header>
+      <mat-card-title>{{card.title}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      @for (checkbox of card.checklist; track $index ) {
+      <mat-checkbox [(ngModel)]="card.status[$index]" class="checkbox">
+        {{checkbox}}
+      </mat-checkbox>
+      }
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button class="btn" color="accent" mat-raised-button (click)="deleteCard($index)">Kartı Sil</button>
+      <button class="btn" color="primary" mat-raised-button (click)="editCard($index, card)">Güncelle</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+}

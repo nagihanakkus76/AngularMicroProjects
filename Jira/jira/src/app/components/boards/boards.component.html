@@ -1,0 +1,14 @@
+<div class="main">
+  <button mat-raised-button color="accent" (click)="openNewBoardDialog()">Yeni Board Ekle</button>
+</div>
+
+@for (board of boardService.boards; track $index) {
+<div class="board" [routerLink]="'/view-board/' + $index">
+  <div>
+    {{board.title}}
+  </div>
+  <div><button mat-icon-button (click)="deleteBoard($index)">
+      <mat-icon>delete</mat-icon>
+    </button></div>
+</div>
+}
